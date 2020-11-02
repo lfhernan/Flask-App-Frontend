@@ -12,15 +12,13 @@ export class AuthVideoComponent implements PipeTransform {
 	) { }
 
 	async transform(src: string): Promise<string> {
-		const token = this.auth.getAccessTokenSilently();
-		const headers = new HttpHeaders({'Authorization': `Bearer ${token}`});
 		try {
-			const videoBlob = await this.http.get(src, { headers, responseType: 'blob' }).toPromise();
+			const videoBlob = await this.http.get(src, { responseType: 'blob' }).toPromise();
 			const reader = new FileReader();
 			return new Promise((resolve, reject) => {
 				reader.onloadend = () => resolve(reader.result as string);
 				reader.readAsDataURL(videoBlob);
-			})
+			});
 		} catch {
 			return;
 		}

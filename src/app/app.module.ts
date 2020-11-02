@@ -48,7 +48,10 @@ import { AuthVideoComponent } from '../components/auth-video/auth-video.componen
 		AuthModule.forRoot({
 			...env.auth,
 			httpInterceptor: {
-				allowedList: [`/api/*`]
+				allowedList: [
+					`https://lhern238-project-backend.herokuapp.com/api/*`,
+					`http://localhost:8000/api/*`
+				]
 			}
 		})
 	],
