@@ -1,6 +1,6 @@
 {
 	"/api/*": {
-		"target": "http://localhost:5000",
+		"target": "https://lhern238-project-backend.herokuapp.com",
 		"secure": false,
 		"logLevel": "debug"
 	}
