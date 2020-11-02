@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
+import { HomeComponent } from '../components/home-component/home-component.component';
+import { StaticPlayerComponent } from '../components/static-player-component/static-player.component';
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+	{ path: '', component: HomeComponent },
+	{ path: 'video', component: StaticPlayerComponent, canActivate: [AuthGuard] }
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(
+		appRoutes,
+		{ enableTracing: false }
+	)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

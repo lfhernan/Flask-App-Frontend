@@ -1,0 +1,44 @@
+<!-- <div class="nav-container mb-3">
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+		<div class="container">
+			<div div class="navbar-nav ml-auto">
+				<a routerLink="Live">Live Stream</a>
+			</div>
+			<div div class="navbar-nav ml-auto">
+				<a routerLink="video">Video</a>
+			</div>
+			<div class="navbar-nav ml-auto">
+				<app-log-in *ngIf="(auth.isAuthenticated$ | async) === false">
+				</app-log-in>
+
+				<app-log-out *ngIf="auth.isAuthenticated$ | async">
+				</app-log-out>
+			</div>
+			<div class="navbar-nav ml-auto" *ngIf="(auth.isAuthenticated$ | async) === false">
+				<app-sign-up *ngIf="(auth.isAuthenticated$ | async) === false"></app-sign-up>
+			</div>
+		</div>
+	</nav>
+</div> -->
+
+<ul ngbNav #nav="ngbNav" class="nav bg-light justify-content-center">
+	<li ngbNavItem>
+		<a ngbNavLink routerLink="">Home</a>
+	</li>
+	<li ngbNavItem>
+		<a ngbNavLink routerLink="video">Video</a>
+	</li>
+	<li ngbNavItem>
+		<a ngbNavLink routerLink="live">Live Stream</a>
+	</li>
+	<li ngbNavItem>
+		<app-log-in *ngIf="(auth.isAuthenticated$ | async) === false">
+		</app-log-in>
+
+		<app-log-out *ngIf="auth.isAuthenticated$ | async">
+		</app-log-out>
+	</li>
+	<li ngbNavItem>
+		<app-sign-up *ngIf="(auth.isAuthenticated$ | async) === false"></app-sign-up>
+	</li>
+</ul>
