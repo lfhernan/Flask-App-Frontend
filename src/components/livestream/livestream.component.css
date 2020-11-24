@@ -1,0 +1,7 @@
+.livestream-container {
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}

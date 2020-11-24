@@ -23,6 +23,7 @@ import { LogOutComponent } from '../components/log-out/log-out.component';
 import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
 import { AuthVideoComponent } from '../components/auth-video/auth-video.component';
+import { LivestreamComponent } from '../components/livestream/livestream.component';
 
 @NgModule({
 	declarations: [
@@ -34,6 +35,7 @@ import { AuthVideoComponent } from '../components/auth-video/auth-video.componen
 		SignUpComponent,
 		NavBarComponent,
 		AuthVideoComponent,
+		LivestreamComponent,
 	],
 	imports: [
 		BrowserModule,
