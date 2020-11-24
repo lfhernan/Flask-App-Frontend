@@ -13,6 +13,7 @@ import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthHttpInterceptor } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
+import { environment as prod } from '../environments/environment.prod';
 
 /* My Components */
 import { HomeComponent } from '../components/home-component/home-component.component';
@@ -49,8 +50,8 @@ import { AuthVideoComponent } from '../components/auth-video/auth-video.componen
 			...env.auth,
 			httpInterceptor: {
 				allowedList: [
-					`https://lhern238-project-backend.herokuapp.com/api/*`,
-					`http://localhost:8000/api/*`
+					`${prod.dev.serverUrl}/api/*`,
+					`${env.dev.serverUrl}/api/*`
 				]
 			}
 		})

@@ -7,6 +7,6 @@ export const environment = {
 		redirectUri: window.location.origin,
 	},
 	dev: {
-		serverUrl: "http://localhost:5000"
+		serverUrl: "https://lhern238-project-backend.herokuapp.com"
 	}
 };
