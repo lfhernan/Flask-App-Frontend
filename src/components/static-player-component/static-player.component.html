@@ -25,7 +25,15 @@
 			<vg-fullscreen></vg-fullscreen>
 		</vg-controls>
 
-		<video #media [vgMedia]="media" [src]="'https://lhern238-project-backend.herokuapp.com/api/video/test.mp4' | authVideo | async" id="singleVideo" preload="auto" crossorigin>
+		<video #media [vgMedia]="media" [src]="currentItem.src | authVideo | async" id="singleVideo" preload="auto" crossorigin>
 		</video>
 	</vg-player>
 </div>
+
+<ul>
+	<li *ngFor="let item of playlist; let $index = index"
+	(click)="onClickPlayListItem(item, $index)"
+	[class.selected]="item === currentItem">
+		{{ item.title }}
+	</li>	
+</ul>
